@@ -20,7 +20,7 @@ app.use(i18n(app, {
   directory: './locales',
   locales: ['zh-CN', 'en'], //  `zh-CN` defualtLocale, must match the locales to the filenames
   modes: [
-    'url'
+    'query'
   ]
 }));
 
