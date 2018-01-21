@@ -45,7 +45,7 @@ app.use(async ctx => {
   const apis = yaml.safeLoad(fs.readFileSync('./apis.yml', 'utf8'));
   await rp('http://localhost:3001')
     .then(async function (json) {
-        const track = json;
+        const track = JSON.parse(json);
         await ctx.render('index', {
           i18n: ctx.i18n,
           config,
