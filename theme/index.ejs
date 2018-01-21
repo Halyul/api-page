@@ -17,9 +17,15 @@
     <div class="sub header">
       <p>
         <%= config.descr %>
-        <% if (track !== null) { %>
+        <% if (track !== null) {
+            if (typeof(track["api-page"]) === "undefined") {
+              trackData = i18n.__("no statistics")
+            } else {
+              trackData = i18n.__("statistics before") + track["api-page"] + i18n.__("statistics after")
+            }
+          %>
           <br />
-          <%= i18n.__("statistics before") + track["api-page"] + i18n.__("statistics after") %>
+          <%= trackData %>
         <% } %>
       </p>
       <p><%= "© " + config.copyright.since + " " + config.copyright.author %></p>
