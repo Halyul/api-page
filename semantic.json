@@ -17,6 +17,17 @@
   },
   "permission": false,
   "autoInstall": false,
+  "components": [
+    "reset",
+    "site",
+    "container",
+    "divider",
+    "header",
+    "dropdown",
+    "item",
+    "menu",
+    "card"
+  ],
   "rtl": false,
   "version": "2.2.13"
 }
