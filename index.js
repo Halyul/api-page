@@ -62,7 +62,8 @@ app.use(async ctx => {
           await ctx.render('index', data);
       })
       .catch(function (err) {
-          console.log(err);
+        ctx.response.status = 500;
+        console.log(err);
       });
   } else {
     data.track = null;
