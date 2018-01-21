@@ -1,6 +1,10 @@
 port: 3000
 title: API Page
 descr: "?????"
+track: http://localhost:3001
 copyright:
   author: Halyul
   since: 2018
+locales:
+  - zh-CN # this is the default language
+  - en

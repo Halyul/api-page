@@ -1,20 +1,65 @@
-dokidoki:
-  link: https://api.0w0.vc/dokidoki
-  descr: "aaaaaaa"
-  track: doki-dokis
-test:
-  link: https://api.0w0.vc/dokidoki
-  descr: "aaaaaaa"
-  track: dokidokisss
-tesst:
-  link: https://api.0w0.vc/dokidoki
-  descr: "aaaaaaa"
-  track: dokidokissss
-tessts:
-  link: https://api.0w0.vc/dokidoki
-  descr: "aaaaaaa"
-  track: dokidokissss
-tesstss:
-  link: https://api.0w0.vc/dokidoki
-  descr: "aaaaaaa"
-  track: dokidokissss
+# Single Language
+#dokidoki:
+#  link: https://api.0w0.vc/dokidoki
+#  descr: "aaaaaaa"
+#  track: doki-dokis
+#test:
+#  link: https://api.0w0.vc/dokidoki
+#  descr: "aaaaaaa"
+#  track: dokidokisss
+#tesst:
+#  link: https://api.0w0.vc/dokidoki
+#  descr: "aaaaaaa"
+#  track: dokidokissss
+#tessts:
+#  link: https://api.0w0.vc/dokidoki
+#  descr: "aaaaaaa"
+#  track: dokidokissss
+#tesstss:
+#  link: https://api.0w0.vc/dokidoki
+#  descr: "aaaaaaa"
+#  track: dokidokissss
+
+# Multi Language
+zh-CN:
+  dokidoki:
+    link: https://api.0w0.vc/dokidoki
+    descr: "中文111"
+    track: doki-dokis
+  test:
+    link: https://api.0w0.vc/dokidoki
+    descr: "中文111aaaa"
+    track: dokidokisss
+  tesst:
+    link: https://api.0w0.vc/dokidoki
+    descr: "中文111aa"
+    track: dokidokissss
+  tessts:
+    link: https://api.0w0.vc/dokidoki
+    descr: "中文111aaaaaa"
+    track: dokidokissss
+  tesstss:
+    link: https://api.0w0.vc/dokidoki
+    descr: "中文111aaaaaa"
+    track: dokidokissss
+en:
+  dokidoki:
+    link: https://api.0w0.vc/dokidoki
+    descr: "English111"
+    track: doki-dokis
+  test:
+    link: https://api.0w0.vc/dokidoki
+    descr: "English111aaaa"
+    track: dokidokisss
+  tesst:
+    link: https://api.0w0.vc/dokidoki
+    descr: "English111aa"
+    track: dokidokissss
+  tessts:
+    link: https://api.0w0.vc/dokidoki
+    descr: "English111aaaaaa"
+    track: dokidokissss
+  tesstss:
+    link: https://api.0w0.vc/dokidoki
+    descr: "English111aaaaaa"
+    track: dokidokissss

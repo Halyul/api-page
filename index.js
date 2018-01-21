@@ -19,7 +19,7 @@ locale(app);
 
 app.use(i18n(app, {
   directory: './locales',
-  locales: ['zh-CN', 'en'], //  `zh-CN` defualtLocale, must match the locales to the filenames
+  locales: config.locales,
   modes: [
     'query'
   ]
@@ -43,32 +43,37 @@ app.use(
 
 app.use(async ctx => {
   const apis = yaml.safeLoad(fs.readFileSync('./apis.yml', 'utf8'));
-  await rp('http://localhost:3001')
-    .then(async function (json) {
-        const track = JSON.parse(json);
-        await ctx.render('index', {
-          i18n: ctx.i18n,
-          config,
-          apis,
-          track
-        });
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
-    /*const track = jsonfile.readFileSync("./data.json", {throws: false});
-    await ctx.render('index', {
-      i18n: ctx.i18n,
-      config,
-      apis,
-      track
-    })*/
+  const data = {
+    i18n: ctx.i18n,
+    config,
+    apis
+  };
+
+  if (config.locales.length !== 1) {
+    data.locale = ctx.getLocaleFromQuery()
+  } else {
+    data.locale = null;
+  }
+
+  if (config.track) {
+    await rp(config.track)
+      .then(async function (json) {
+          data.track = JSON.parse(json);
+          await ctx.render('index', data);
+      })
+      .catch(function (err) {
+          console.log(err);
+      });
+  } else {
+    data.track = null;
+    await ctx.render('index', data)
+  };
 });
 
 /**
  * Development server
  */
-if (process.env.npm_config_dev) {
+if (process.env.DEV) {
   const devServer = new Koa();
   const devPort = (config.port + 1) || 3001;
   devServer.listen(devPort, function() {
