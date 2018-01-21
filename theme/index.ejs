@@ -1,0 +1,51 @@
+<div class="ui container api-container">
+  <div class="ui compact menu right floated">
+    <div class="ui simple dropdown item">
+      <%= i18n.__("language dropdown") %>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <% for (var i in i18n.locales) { %>
+          <a href="<%= i %>" class="item"><%= i %></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <h1 class="ui header">
+    <%= config.title %>
+    <div class="sub header">
+      <p>
+        <%= config.descr %>
+        <br />
+        <%= i18n.__("statistics before") + track["api-page"] + i18n.__("statistics after") %>
+      </p>
+      <p><%= "© " + config.copyright.since + " " + config.copyright.author %></p>
+    </div>
+  </h1>
+</div>
+<h4 class="ui horizontal divider header">
+  <i class="configure icon"></i>
+  API
+</h4>
+<div class="ui four doubling stackable grid container cards">
+  <% for (var i in apis) {
+      var trackName = apis[i].track
+      var trackData = track[trackName]
+      if (typeof(trackData) === "undefined") {
+        trackData = i18n.__("no statistics")
+      } else {
+        trackData = i18n.__("statistics before") + trackData + i18n.__("statistics after")
+      }
+    %>
+    <a class="ui card" href="<%= apis[i].link %>">
+      <div class="content">
+        <div class="header"><%= i %></div>
+        <div class="meta">
+          <span class="category"><%= trackData %></span>
+        </div>
+        <div class="description">
+          <%= apis[i].descr %>
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>

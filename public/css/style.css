@@ -1,0 +1,11 @@
+body {
+  height: auto;
+}
+
+.api-container {
+  margin-top: 16px;
+}
+
+.api-divider {
+  height: calc(2rem - 0.142857em);
+}
