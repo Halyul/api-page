@@ -1,10 +1,10 @@
 FROM node:alpine
 
-WORKDIR /dokidoki
+WORKDIR /api-page
 
 RUN apk add --no-cache git \
-    && git clone https://github.com/Halyul/doki-doki.git /dokidoki \
-    && mkdir /dokidoki/data \
+    && git clone https://github.com/Halyul/api-page.git /api-page \
+    && mkdir /api-page/data \
     && npm install
 
 CMD npm start
