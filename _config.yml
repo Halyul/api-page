@@ -1,6 +1,6 @@
 port: 3000
 title: API Page
-descr: "?????"
+descr: "A simple api page"
 track: http://localhost:3001
 copyright:
   author: Halyul
@@ -8,3 +8,9 @@ copyright:
 locales:
   - zh-CN # this is the default language
   - en
+zh-CN:
+  title: API页面
+  descr: "假装自己是一个提供api的dalao"
+en:
+  title: API Page
+  descr: "Pretending I have api to provide"

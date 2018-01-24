@@ -13,10 +13,24 @@
     </div>
   <% } %>
   <h1 class="ui header">
-    <%= config.title %>
+    <%
+      if (locale !== null) {
+        var title = config[i18n.locale].title;
+      } else {
+        var title = config.title;
+      };
+    %>
+    <%= title %>
     <div class="sub header">
       <p>
-        <%= config.descr %>
+        <%
+          if (locale !== null) {
+            var descr = config[locale].descr;
+          } else {
+            var descr = config.descr;
+          };
+        %>
+        <%= descr %>
         <% if (track !== null) {
             if (typeof(track["api-page"]) === "undefined") {
               trackData = i18n.__("no statistics")
@@ -38,7 +52,7 @@
 <div class="ui four doubling stackable grid container cards">
   <%
     if (locale !== null) {
-      var apis = apis[locale];
+      var apis = apis[i18n.locale];
     };
     for (var i in apis) {
       if (track !== null) {
